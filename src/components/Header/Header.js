@@ -9,7 +9,7 @@ import {FundForm} from '../Body/FundForm';
 import {Contact} from '../Body/Contact';
 
 
-export const Header = () => {
+export const Header = ({handleLogout}) => {
     
     return (
         <>

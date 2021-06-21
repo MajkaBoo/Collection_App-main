@@ -8,6 +8,7 @@ import {
 import {Header} from '../Header/Header';
 import {Logon} from '../Header/Logon';
 import {Register} from '../Header/Register';
+import {Hero} from './Hero';
 import fire from '../../firebase';
 
 export const MainDeal = () => {
@@ -22,14 +23,19 @@ export const MainDeal = () => {
         setEmail('');
         setPassword('');
     }
-    
+   
     const clearErrors = () => {
         setEmailError("");
         setPasswordError("");
     };
     
     const handleLogin = () => {
+        
+        
+        
+        
         clearErrors();
+        
         fire
             .auth()
             .signInWithEmailAndPassword(email, password)
@@ -47,12 +53,14 @@ export const MainDeal = () => {
             });
     };
     
+    
     const handleSignup = () => {
         clearErrors();
         fire
         .auth()
         .createUserWithEmailAndPassword(email, password)
         .catch(err => {
+            console.log(err);
             switch(err.code){
                 case 'auth/email-already-in-use':
                 case 'auth/invalid-email':
@@ -91,7 +99,12 @@ export const MainDeal = () => {
             <Link to="/register" className="btn-log_link current-log">Register</Link> 
             </div>
             <Switch>
+            {user ? (
+                <Hero handleLogout={handleLogout}/>
+            ):(
                 <Route path="/" exact component={Header} />
+            )}
+    
                 <Route path="/logon">
                     <Logon 
                     email={email}
@@ -123,6 +136,8 @@ export const MainDeal = () => {
                     </Route>
             </Switch>
         </Router>
+       
         </>
+        
     )
 }
