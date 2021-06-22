@@ -146,14 +146,17 @@ export const MainDeal = () => {
     return (
         <>
         <Router>
-     
+
+        <Hero email={email} handleLogout={handleLogout}/>
+        
             <div className="btn-log">
             <Link to="/logon" className="btn-log_link">Logon</Link>
             <Link to="/register" className="btn-log_link current-log">Register</Link> 
             </div>
             <Switch>
+            
             {user ? (
-                <Hero handleLogout={handleLogout}/>
+                <Route path="/hero"><Hero email={email} handleLogout={handleLogout}/></Route>
             ):(
                 <Route path="/" exact component={Header} />
             )}
