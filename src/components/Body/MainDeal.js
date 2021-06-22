@@ -18,6 +18,7 @@ export const MainDeal = () => {
     const [emailError, setEmailError] = useState("");
     const [passwordError, setPasswordError] = useState("");
     const [hasAccount, setHasAccount] = useState(false);
+    const [formIsValid, setFormIsValid] = useState(true);
     
     const clearInputs = () => {
         setEmail('');
@@ -31,7 +32,31 @@ export const MainDeal = () => {
     
     const handleLogin = () => {
         
+        // if(!email) {
+        //     setFormIsValid(false);
+        //     setEmailError("Please enter your email");
+        // }
+        // if (typeof email !== "undefined") {
+        //     //regular expression for email validation
+        //     const pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
+            
+        // if(!pattern.test(email)) {
+        //     setFormIsValid(false);
+        //     setEmailError("Please enter valid email"); 
+        // }
+        // }
         
+        // if(!password) {
+        //     setFormIsValid(false); 
+        //     setPasswordError("Please enter your password");
+        // }
+        // if(typeof password !== "undefined") {
+        //     if (password.length < 6) {
+        //         setFormIsValid(false); 
+        //         setPasswordError("Please enter 6 digits password");
+        //     }
+        // }
+        // return formIsValid;
         
         
         clearErrors();
@@ -55,6 +80,34 @@ export const MainDeal = () => {
     
     
     const handleSignup = () => {
+        
+        // if(!email) {
+        //     setFormIsValid(false);
+        //     setEmailError("Please enter your email");
+        // }
+        // if (typeof email !== "undefined") {
+        //     //regular expression for email validation
+        //     const pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
+            
+        // if(!pattern.test(email)) {
+        //     setFormIsValid(false);
+        //     setEmailError("Please enter valid email"); 
+        // }
+        // }
+        
+        // if(!password) {
+        //     setFormIsValid(false); 
+        //     setPasswordError("Please enter your password");
+        // }
+        // if(typeof password !== "undefined") {
+        //     if (password.length < 6) {
+        //         setFormIsValid(false); 
+        //         setPasswordError("Please enter 6 digits password");
+        //     }
+        // }
+        // return formIsValid;
+        
+        
         clearErrors();
         fire
         .auth()

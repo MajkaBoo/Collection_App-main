@@ -40,18 +40,7 @@ export const Logon = (props) => {
                 
                 <div className="toggle">
                 
-        {hasAccount ? ( 
-                <> <button className="nav-link" onClick={handleLogin}> Sign in</button> 
-                <p>Don't have an account? <Link to="/register" onClick={() => setHasAccount(!hasAccount)}>Register</Link></p> 
-                </> 
-            ) : ( 
-                <> <button className="nav-link" onClick={handleSignup}>Register</button> 
-                <p>Have an account? <Link to="/logon" onClick={() => setHasAccount(!hasAccount)}>Sign in</Link></p> 
-                </> 
-            )}
-        
-            
-          
+                <button className="nav-link" onClick={handleLogin}> Sign in</button> 
             </div>
         </div>
         </section>
